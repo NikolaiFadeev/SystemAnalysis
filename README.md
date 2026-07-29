@@ -5,15 +5,15 @@ SystemAnalysis is a Mathematica package for preprocessing in a fully automatic w
 
 Systems of the form
 
-$$\alpha_i(x,d)\,\frac{d}{dx}I_i(x) \;=\; \sum_j \beta_{i,j}(x,d)\,I_j(x) \;+\; \sum_k \gamma_{i,k}(x,d)\,B_k(x)$$
+$$\alpha_i(x,d)\frac{d}{dx}I_i(x) = \sum_j \beta_{i,j}(x,d)\,I_j(x) + \sum_k \gamma_{i,k}(x,d)B_k(x)$$
 
 arise typically in particle physics, where the $I_i$ are *master integrals* (MIs) and the $B_k$ are *base case integrals* (BIs) whose ε-expansions must be supplied by the user. Since these systems can only be solved up to a finite order in ε, computing the BIs to an unnecessarily high order is the main bottleneck.
 
-`SystemAnalysis` answers the question: *given a target order for the master integrals, what is the cheapest set of inputs and equations that gets me there?* It
+`SystemAnalysis` answers the question: *given a target order for the master integrals, what is the cheapest set of inputs and equations that gets me there?* It does the following:
 
-1. **triangularizes** the system, splitting it into irreducible subsystems,
-2. **uncouples** each subsystem in several schemes (Gauß, Zürcher), comparing the resulting ε-orders as well as the orders of the associated ODEs/recurrences,
-3. **recombines** the local corrections into a global answer for the full system.
+1. **Triangularizes** the system, splitting it into irreducible subsystems,
+2. **Uncouples** each subsystem in several schemes (Gauß, Zürcher), comparing the resulting ε-orders as well as the orders of the associated ODEs/recurrences,
+3. **Recombines** the local corrections into a global answer for the full system.
 
 The output is the list of MIs with the ε-order and the order of the higher-order ODE (HODE) needed for each, the list of BIs with the ε-order to which each must be provided, and the corresponding set of equations.
 
@@ -35,7 +35,7 @@ The output is the list of MIs with the ε-order and the order of the higher-orde
 The packages can be obtained from:
 
 - [**Sigma**](https://www.risc.jku.at/research/combinat/software/Sigma/) — a summation package by Carsten Schneider
-- [**HarmonicSums**](https://www.risc.jku.at/research/combinat/software/HarmonicSums/) — by Jakob Ablinger
+- [**HarmonicSums**](https://www.risc.jku.at/research/combinat/software/HarmonicSums/) — a package for allows to deal with nested sums such as harmonic sums, S-sums, cyclotomic sums and cyclotmic S-sums as well as iterated integrals such as harmonic polylogarithms, multiple polylogarithms and cyclotomic polylogarithms in an algorithmic fashion by Jakob Ablinger
 - [**SumProduction and EvaluateMultiSums**](https://www3.risc.jku.at/research/combinat/software/EvaluateMultiSums/index.php) — packages for the simplification of definite multi-sums and large multi-sums in terms of indefinite nested sums and products by Carsten Schneider
 - [**SolveCoupledSystems**](https://www3.risc.jku.at/research/QFT/software.html) — a package for solving coupled systems of differential and difference equations in terms of nested sums and products by Carsten Schneider
 - [**OreSysG**](https://www3.risc.jku.at/research/combinat/software/ergosum/RISC/OreSys.html) — a package for uncoupling systems of linear Ore operator equations by Stefan Gerhold
